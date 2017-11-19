@@ -1,0 +1,20 @@
+---
+output: html_document
+output_dir: docs
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE)
+```
+
+###  The References Database {.tabset .tabset-fade .tabset-pills}
+
+#### about database
+Here will be nice text.
+
+#### search
+```{r}
+db <- read.csv("database.csv", sep = "\t", na.strings = "")
+library(DT)
+datatable(db[1:12], filter = 'top', rownames = FALSE, options = list(dom = 'tip'), escape = FALSE)
+```
